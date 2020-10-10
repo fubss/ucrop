@@ -1,0 +1,18 @@
+contract CDPData is ProxyData {
+    //event FilledKombucha(uint amountAdded, uint newFillAmount);
+    //event DrankKombucha(uint amountDrank, uint newFillAmount);
+    
+
+    uint256 public EtherDeposited; //количество заблокированного эфира, на этом CDP
+    uint256 public lastRateInfo; //последняя полученная информация о курсе Эфира
+    uint256 public UcropGiven;
+    address public clientAddress; //адрес покупателя токенов
+    bool public canBeClosedOnlyByClient = true; //флаг, что CDP может быть закрыт только покупателем токенов
+    uint256 tokenAmount;
+    address tokenAddress;//когда токен будет задеплоен, станет доступен
+    
+    
+    /*uint public fillAmount;
+    uint public capacity;
+    string public flavor;*/
+}

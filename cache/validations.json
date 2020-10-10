@@ -1,0 +1,322 @@
+{
+  "Context": {
+    "inherit": [],
+    "libraries": [],
+    "errors": [],
+    "layout": {
+      "storage": [],
+      "types": {}
+    }
+  },
+  "Ownable": {
+    "inherit": [
+      "Context"
+    ],
+    "libraries": [],
+    "errors": [
+      {
+        "kind": "constructor",
+        "contract": "Ownable",
+        "src": "@openzeppelin/contracts/access/Ownable.sol:26"
+      }
+    ],
+    "layout": {
+      "storage": [
+        {
+          "contract": "Ownable",
+          "label": "_owner",
+          "type": "t_address",
+          "src": "@openzeppelin/contracts/access/Ownable.sol:19"
+        }
+      ],
+      "types": {
+        "t_address": {
+          "label": "address"
+        }
+      }
+    }
+  },
+  "Brain": {
+    "version": {
+      "withMetadata": "c27975252afd651216e569559a4869e8e3eac2e6073707abe739712e09136156",
+      "withoutMetadata": "7b7e005f33d022ee66e746890588eb56c3e467a4c10817e178f712e33bdbd41f"
+    },
+    "inherit": [
+      "Ownable",
+      "Context"
+    ],
+    "libraries": [],
+    "errors": [
+      {
+        "kind": "state-variable-assignment",
+        "name": "tokensAmount",
+        "src": "contracts/Brain.sol:10"
+      },
+      {
+        "kind": "state-variable-assignment",
+        "name": "maxUcropPerCDPValue",
+        "src": "contracts/Brain.sol:11"
+      },
+      {
+        "kind": "state-variable-assignment",
+        "name": "maxUcropPerClient",
+        "src": "contracts/Brain.sol:12"
+      },
+      {
+        "kind": "state-variable-assignment",
+        "name": "lastEtherRateInfo",
+        "src": "contracts/Brain.sol:13"
+      },
+      {
+        "kind": "state-variable-assignment",
+        "name": "aliveCDPsCount",
+        "src": "contracts/Brain.sol:29"
+      }
+    ],
+    "layout": {
+      "storage": [
+        {
+          "contract": "Brain",
+          "label": "tokensAmount",
+          "type": "t_uint256",
+          "src": "contracts/Brain.sol:10"
+        },
+        {
+          "contract": "Brain",
+          "label": "maxUcropPerCDPValue",
+          "type": "t_uint256",
+          "src": "contracts/Brain.sol:11"
+        },
+        {
+          "contract": "Brain",
+          "label": "maxUcropPerClient",
+          "type": "t_uint256",
+          "src": "contracts/Brain.sol:12"
+        },
+        {
+          "contract": "Brain",
+          "label": "lastEtherRateInfo",
+          "type": "t_uint256",
+          "src": "contracts/Brain.sol:13"
+        },
+        {
+          "contract": "Brain",
+          "label": "ucropTokenAddress",
+          "type": "t_address_payable",
+          "src": "contracts/Brain.sol:15"
+        },
+        {
+          "contract": "Brain",
+          "label": "tokensPerClient",
+          "type": "t_mapping(t_address,t_uint256)",
+          "src": "contracts/Brain.sol:19"
+        },
+        {
+          "contract": "Brain",
+          "label": "CDPHolder",
+          "type": "t_mapping(t_address,t_address)",
+          "src": "contracts/Brain.sol:20"
+        },
+        {
+          "contract": "Brain",
+          "label": "CDPDeposit",
+          "type": "t_mapping(t_address,t_uint256)",
+          "src": "contracts/Brain.sol:22"
+        },
+        {
+          "contract": "Brain",
+          "label": "CDPUcropGiven",
+          "type": "t_mapping(t_address,t_uint256)",
+          "src": "contracts/Brain.sol:23"
+        },
+        {
+          "contract": "Brain",
+          "label": "contracts",
+          "type": "t_array(t_address)dyn_storage",
+          "src": "contracts/Brain.sol:26"
+        },
+        {
+          "contract": "Brain",
+          "label": "CDPindexIncontracts",
+          "type": "t_mapping(t_address,t_uint256)",
+          "src": "contracts/Brain.sol:27"
+        },
+        {
+          "contract": "Brain",
+          "label": "aliveCDPsCount",
+          "type": "t_uint32",
+          "src": "contracts/Brain.sol:29"
+        }
+      ],
+      "types": {
+        "t_uint256": {
+          "label": "uint256"
+        },
+        "t_address_payable": {
+          "label": "address payable"
+        },
+        "t_mapping(t_address,t_uint256)": {
+          "label": "mapping(address => uint256)"
+        },
+        "t_mapping(t_address,t_address)": {
+          "label": "mapping(address => address)"
+        },
+        "t_array(t_address)dyn_storage": {
+          "label": "address[]"
+        },
+        "t_uint32": {
+          "label": "uint32"
+        }
+      }
+    }
+  },
+  "CDP": {
+    "version": {
+      "withMetadata": "520189dd59fe7d04b66f5fd545e9593491b1f14a5c5236227af5949419a5721a",
+      "withoutMetadata": "e6bae2309d859ef408b8178c50f9d67a2fb11456be9eff6e941d5e33dd52fc71"
+    },
+    "inherit": [
+      "Ownable",
+      "Context"
+    ],
+    "libraries": [],
+    "errors": [
+      {
+        "kind": "constructor",
+        "contract": "CDP",
+        "src": "contracts/CDP.sol:22"
+      },
+      {
+        "kind": "state-variable-assignment",
+        "name": "canBeClosedOnlyByClient",
+        "src": "contracts/CDP.sol:16"
+      }
+    ],
+    "layout": {
+      "storage": [
+        {
+          "contract": "CDP",
+          "label": "EtherDeposited",
+          "type": "t_uint256",
+          "src": "contracts/CDP.sol:12"
+        },
+        {
+          "contract": "CDP",
+          "label": "lastRateInfo",
+          "type": "t_uint256",
+          "src": "contracts/CDP.sol:13"
+        },
+        {
+          "contract": "CDP",
+          "label": "UcropGiven",
+          "type": "t_uint256",
+          "src": "contracts/CDP.sol:15"
+        },
+        {
+          "contract": "CDP",
+          "label": "clientAddress",
+          "type": "t_address",
+          "src": "contracts/CDP.sol:16"
+        },
+        {
+          "contract": "CDP",
+          "label": "canBeClosedOnlyByClient",
+          "type": "t_bool",
+          "src": "contracts/CDP.sol:16"
+        },
+        {
+          "contract": "CDP",
+          "label": "tokenAmount",
+          "type": "t_uint256",
+          "src": "contracts/CDP.sol:20"
+        },
+        {
+          "contract": "CDP",
+          "label": "tokenAddress",
+          "type": "t_address",
+          "src": "contracts/CDP.sol:20"
+        }
+      ],
+      "types": {
+        "t_uint256": {
+          "label": "uint256"
+        },
+        "t_address": {
+          "label": "address"
+        },
+        "t_bool": {
+          "label": "bool"
+        }
+      }
+    }
+  },
+  "UcropToken": {
+    "version": {
+      "withMetadata": "384208b81c14547838166ace0e1412f1129e7732a13207257fb68078ec135ec3",
+      "withoutMetadata": "2c987f300bd7fb6da16dfb1e82f2017db2bc09888a39fd245e961139b90ea1d3"
+    },
+    "inherit": [
+      "Ownable",
+      "Context"
+    ],
+    "libraries": [],
+    "errors": [
+      {
+        "kind": "state-variable-assignment",
+        "name": "rate",
+        "src": "contracts/UcropToken.sol:14"
+      }
+    ],
+    "layout": {
+      "storage": [
+        {
+          "contract": "UcropToken",
+          "label": "rate",
+          "type": "t_uint32",
+          "src": "contracts/UcropToken.sol:14"
+        },
+        {
+          "contract": "UcropToken",
+          "label": "totalSupply",
+          "type": "t_uint256",
+          "src": "contracts/UcropToken.sol:15"
+        },
+        {
+          "contract": "UcropToken",
+          "label": "BrainAddress",
+          "type": "t_address",
+          "src": "contracts/UcropToken.sol:16"
+        },
+        {
+          "contract": "UcropToken",
+          "label": "balances",
+          "type": "t_mapping(t_address,t_uint256)",
+          "src": "contracts/UcropToken.sol:17"
+        },
+        {
+          "contract": "UcropToken",
+          "label": "allowed",
+          "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+          "src": "contracts/UcropToken.sol:18"
+        }
+      ],
+      "types": {
+        "t_uint32": {
+          "label": "uint32"
+        },
+        "t_uint256": {
+          "label": "uint256"
+        },
+        "t_address": {
+          "label": "address"
+        },
+        "t_mapping(t_address,t_uint256)": {
+          "label": "mapping(address => uint256)"
+        },
+        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+          "label": "mapping(address => mapping(address => uint256))"
+        }
+      }
+    }
+  }
+}

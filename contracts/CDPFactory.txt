@@ -1,0 +1,19 @@
+// contracts/CDP.sol
+//SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.6.0;
+
+import "./CDP.sol";
+import "./CDPProxy.sol";
+
+contract CDPFactory {
+    CDP private masterCopy;
+    constructor(CDP _masterCopy) public {
+        masterCopy = _masterCopy;
+    }
+    function createCDP(uint256 _EtherDeposited, uint256 _lastRateInfo, address _clientAddress, uint _UcropGiven)
+        public
+        returns (CDP)
+    {
+        return CDP(new CDPProxy(masterCopy, _EtherDeposited,  _lastRateInfo,  _clientAddress, _UcropGiven));
+    }
+}
